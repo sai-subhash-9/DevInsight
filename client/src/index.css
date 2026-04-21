@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a7a #0f0f20;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #3a3a6a;
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #fff;
+  }
+
+  body {
+    background: #0a0a15;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-accent to-violet-500 hover:from-accent-dark hover:to-violet-600
+           text-white font-medium rounded-lg transition-all duration-200 ease-out
+           hover:shadow-xl hover:shadow-accent/20 active:scale-[0.97]
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-dark-600/60 hover:bg-dark-500/80 text-gray-200 font-medium rounded-lg
+           border border-dark-400/20 hover:border-dark-400/40
+           transition-all duration-200 ease-out active:scale-[0.97]
+           backdrop-blur-sm;
+  }
+
+  .btn-danger {
+    @apply px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 font-medium rounded-lg
+           border border-red-500/20 hover:border-red-500/30
+           transition-all duration-200 ease-out active:scale-[0.97];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-dark-800/80 border border-dark-400/20 rounded-xl
+           text-gray-100 placeholder-gray-500/60 outline-none
+           focus:border-accent/50 focus:ring-2 focus:ring-accent/15
+           hover:border-dark-400/35
+           transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-dark-800/70 to-dark-800/40 backdrop-blur-md
+           border border-dark-400/15 rounded-2xl p-6
+           shadow-xl shadow-black/10;
+  }
+
+  .glass {
+    @apply bg-dark-700/30 backdrop-blur-lg border border-dark-400/10 rounded-2xl;
+  }
+}
